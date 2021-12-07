@@ -1,0 +1,16 @@
+body {margin: 0;}
+ul, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+.contents_area {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+h1 {
+    margin: .2em 0 .2em;
+}

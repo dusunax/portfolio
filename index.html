@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오-두선아</title>
+    <link rel="icon" href="img/favi_square.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/scroll.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/sections.js" defer></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <nav>
+                <div class="contents_area">
+                    <a href="index.html" class="logo">DU SUN A</a>
+                    <ul class="menu_ul">
+                        <li>
+                            Home
+                            <span class="svg_outer">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="asterisk" class="svg-inline--fa fa-asterisk fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M478.21 334.093L336 256l142.21-78.093c11.795-6.477 15.961-21.384 9.232-33.037l-19.48-33.741c-6.728-11.653-21.72-15.499-33.227-8.523L296 186.718l3.475-162.204C299.763 11.061 288.937 0 275.48 0h-38.96c-13.456 0-24.283 11.061-23.994 24.514L216 186.718 77.265 102.607c-11.506-6.976-26.499-3.13-33.227 8.523l-19.48 33.741c-6.728 11.653-2.562 26.56 9.233 33.037L176 256 33.79 334.093c-11.795 6.477-15.961 21.384-9.232 33.037l19.48 33.741c6.728 11.653 21.721 15.499 33.227 8.523L216 325.282l-3.475 162.204C212.237 500.939 223.064 512 236.52 512h38.961c13.456 0 24.283-11.061 23.995-24.514L296 325.282l138.735 84.111c11.506 6.976 26.499 3.13 33.227-8.523l19.48-33.741c6.728-11.653 2.563-26.559-9.232-33.036z"></path></svg>
+                            </span>
+                        </li>
+                        <li>
+                            ABOUT ME
+                            <span class="svg_outer">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="address-card" class="svg-inline--fa fa-address-card fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-352 96c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H86.4C74 384 64 375.4 64 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2zM512 312c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z"></path></svg>
+                            </span>
+                        </li>
+                        <li>
+                            PORTFOLIO
+                            <span class="svg_outer">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="archive" class="svg-inline--fa fa-archive fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"></path></svg>
+                            </span>
+                        </li>
+                        <li>
+                            SKILLS
+                            <span class="svg_outer">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="battery-empty" class="svg-inline--fa fa-battery-empty fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M544 160v64h32v64h-32v64H64V160h480m16-64H48c-26.51 0-48 21.49-48 48v224c0 26.51 21.49 48 48 48h512c26.51 0 48-21.49 48-48v-16h8c13.255 0 24-10.745 24-24V184c0-13.255-10.745-24-24-24h-8v-16c0-26.51-21.49-48-48-48z"></path></svg>
+                            </span>
+                        </li>
+                        <li>
+                            CONTACT
+                            <span class="svg_outer">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="svg-inline--fa fa-bell fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"></path></svg>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="indicator_box">
+            </div>
+        </header>
+        <main>
+            <div class="sec sec1 on">
+                <div class="right">
+                    <div class="readme">
+                        {메뉴 <b>클릭</b>}<br>
+                        {마우스 <b>스크롤</b>}<br>
+                        {키보드버튼 <b>H, M, P, S, C, ↑, ↓</b>}
+                        <br><br>
+                        <b>(데스크탑 1920px에 최적화 되어있습니다.)</b>
+                    </div>
+                </div>
+                <div class="text_box">
+                    <div class="text_ball">
+                        <span>
+                            P
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            O
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            R
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            T
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            F
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            O
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            L
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            I
+                        </span>
+                    </div>
+                    <div class="text_ball">
+                        <span>
+                            O
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="sec sec2">
+                <div class="top">
+                    <h1 class="section_title">
+                        드신이
+                        <span class="dot dot1">■</span>
+                        <span class="dot dot2">■</span>
+                        <span class="dot dot3">■</span>
+                    </h1>
+                </div>
+                <div class="bottom">
+                    <div class="text_box">
+                        <h1>ABOUT ME</h1>
+                        <div class="row1">
+                            <h3 class="title">
+                                UI Development 
+                            </h3>
+                            <div class="text">
+                                <b>기초를 튼튼히</b> HTML CSS JS JQ<br>{ 결과를 만들기 전에 구조를 이해하기 위해서 노력했습니다. }
+                            </div>
+                        </div>
+                        <div class="row2">
+                            <h3 class="title">
+                                Markup
+                            </h3>
+                            <div class="text">
+                                { <b>웹표준</b>을 기반으로 시멘틱 마크업을 작성합니다. }<br>
+                                코드를 잘 그리기 위해 공부하며 성장합니다.
+                            </div>
+                        </div>
+                        <div class="row3">
+                            <h3 class="title">
+                                Co-work
+                            </h3>
+                            <div class="text">
+                                { <b>함께</b>일하고 싶은 사람이 될 수 있도록, 성실하고 발전가능성 있는 신입이 되겠습니다. }
+                            </div>
+                        </div>
+                        <div class="row4">
+                            <h3 class="title">
+                                For Users
+                            </h3>
+                            <div class="text">
+                                <b>웹접근성</b>을 고려하며, 사용자의 입장에서 편하고 즐거운 UX를 만들기 위해 반응형, 인터렉션 페이지를 만듭니다..<br>
+                                어떤 디바이스에서 접속하더라도 사용자가 어려움 없이 정보를 얻을 수 있도록 합니다.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card1">
+                        DU SUN A
+                        PROFILE();
+                    </div>
+                    <div class="card card2">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" class="svg-inline--fa fa-bookmark fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path></svg>
+                        license
+                        <br>
+                        웹디자인 기능사
+                        <br>
+                        그래픽스운용기능사,
+                        <br>
+                        운전면허 2종 보통
+                    </div>                    
+                    <div class="card card3">
+                        한양여대 조형일러스트레이션과
+                        <br>
+                        송곡여고 만화애니메이션과
+                    </div>
+                    <div class="card card4">
+                        1990. 02. 25
+                        <br>
+                        서울 중랑구 거주
+                    </div>
+                    <div class="card card5">
+                        21.06.10-.11.26
+                        <br>
+                        종로 하이미디어아카데미
+                        UI/UX 웹퍼블리셔 수료
+                    </div>
+                    <div class="card card6 img_card img_card1">
+                    </div>
+                    <div class="card card6 img_card img_card2">
+                    </div>
+                    <div class="card card6 img_card img_card3">
+                    </div>
+                    <div class="card card6">
+                        신입 웹퍼블리셔
+                        <br>
+                        前 일러스트레이터
+                        <br>
+                        前 스타벅스 파트너
+                    </div>
+                </div>
+            </div>
+            <div class="sec sec3">
+                <div class="left">
+                </div>
+                <div class="mockup right">
+                    <h1>포트폴리오 Link</h1>
+                    <ul class="content_ul">
+                        <li class="content content1">
+                            <div class="img_box">
+                                <img src="img/mockup/003_mockup_1.jpg" alt="">
+                                <img src="img/mockup/003_mockup_2.jpg" alt="">
+                                <img src="img/mockup/003_mockup_3.jpg" alt="">
+                            </div>
+                            <div class="bot">
+                                <div class="title">
+                                    스윗밸런스
+                                </div>
+                                <div class="desc">
+                                    <div class="f_left">
+                                        <div class="text_head">
+                                            Type: 쇼핑몰 |  Viewport: 반응형<br>
+                                            기여도: 100% | 작업시간: 4~5일
+                                            <br>
+                                            <b>
+                                                <span class="tag html">HTML5</span>
+                                                <span class="tag css">CSS3</span>
+                                                <span class="tag js">JavaScript</span>
+                                                <span class="tag jq">jQuery</span>
+                                                
+                                                <div class="d-1600-block"></div>
+
+                                                <span class="tag php">PHP</span>
+                                            </b>
+                                        </div>
+                                        <div class="text_sm">
+                                            <b>컨셉트</b>: 헷갈리기 쉬운 정기배송 배송일을 알기 쉽게 Date를 통해 버튼으로 만들었고, 불필요한 페이지이동 없이 정보를 필터링하였다.
+                                            <br>
+                                            <b>PHP로 DB와 연동</b>해서 아이템을 삽입하고 분류하였다.
+                                            신선한 야채를 연상하는 dull 또는 deep한 그린 색상을 주조색으로, 새벽을 연상시키는 deep purple 색상을 보조색으로 나타내었다. 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <a target="_blank" href="http://dusuna.dothome.co.kr/003/index.html" class="link_btn"> -->
+                            <a target="_blank" href="http://bitstudy.cafe24.com/php/du/index.html" class="link_btn">
+                                사이트 링크
+                            </a>
+                        </li>
+                        <li class="content content1">
+                            <div class="img_box">
+                                <img src="img/mockup/005_mockup_1-index.jpg" alt="">
+                                <img src="img/mockup/005_mockup_2-about.jpg" alt="">
+                                <img src="img/mockup/005_mockup_3-menu.jpg" alt="">
+                                <img src="img/mockup/005_mockup_4-location.jpg" alt="">
+                            </div>
+                            <div class="bot">
+                                <div class="title">
+                                    한신포차
+                                </div>
+                                <div class="desc">
+                                    <div class="f_left">
+                                        <div class="text_head">
+                                            Type: 매장정보 |  Viewport: 반응형<br>
+                                            기여도: 100% | 작업시간: 4~5일
+                                            <br>
+                                            <b>
+                                                <span class="tag html">HTML5</span>
+                                                <span class="tag css">CSS3</span>
+                                                <span class="tag js">JavaScript</span>
+                                                <span class="tag jq">jQuery</span>
+                                                
+                                                <div class="d-1600-block"></div>
+
+                                                <span class="tag php">PHP</span>
+                                            </b>
+                                        </div>
+                                        <div class="text_sm">
+                                            <b>컨셉트</b>: 메뉴 리스트와 매장지도의 두가지 정보를 <b>PHP로 DB와 연동</b>하고, 카카오맵 API를 적용했습니다. 지역검색으로 매장의 위치를 직접 알 수 있도록 하였고 기존 사이트를 바탕으로 scroll 높이와 click, hover등 Event를 더하고, 섹션·텍스트의 색상, 강약을 통해 가독성을 높였습니다. 스와이퍼, 부트스트랩를 사용했고, 반응형으로 다양한 기기에서 아이템이 깨지지 않도록 하였습니다. 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a target="_blank" href="http://dusuna.cafe24.com/005/index.html" class="link_btn">
+                                사이트 링크
+                            </a>
+                        </li>
+                        <li class="content content2">
+                            <div class="img_box">
+                                <img src="img/mockup/002_mockup_1.jpg" alt="">
+                                <img src="img/mockup/002_mockup_2.jpg" alt="">
+                                <img src="img/mockup/002_mockup_3.jpg" alt="">
+                            </div>
+                            <div class="bot">
+                                <div class="title">
+                                    제이에스티나
+                                </div>
+                                <div class="desc">
+                                    <div class="f_left">
+                                        <div class="text_head">
+                                            Type: 쇼핑몰 |  Viewport: 반응형<br>
+                                            기여도: 100% | 작업시간: 4~5일
+                                            <br>
+                                            <b>
+                                                <span class="tag html">HTML5</span>
+                                                <span class="tag css">CSS3</span>
+                                                <span class="tag js">JavaScript</span>
+                                                <span class="tag jq">jQuery</span>
+                                            </b>
+                                        </div>
+                                        <div class="text_sm">
+                                            <b>컨셉트</b>: 상품이 많고 분류가 다양한 쇼핑몰 사이트 제작을 위해, 아이템 정보를 저장 후 카테고리에 맞게 출력하였다. 편안한 사용자 경험을 위해 스크롤 높이에 맞추어 페이지를 로딩하고, 모든 페이지를 반응형으로 제작하였다.
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a target="_blank" href="http://dusuna.dothome.co.kr/002/index.html" class="link_btn">
+                                사이트 링크
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sec sec4">
+                <div class="contents_area">
+                    <h1>스킬🔥</h1>
+                    <div class="skill skill1">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_1.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>HTML5</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill skill2">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_2.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>CSS3</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill skill3">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_3.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>JavaScript</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill skill4">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_4.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>jQuery</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill skill5">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_5.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>PHP</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill skill6">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_6.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>React.js</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill skill7">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_7.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>Photoshop</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill skill8">
+                        <div class="img f_left">
+                            <img src="img/icon/skill_8.png" alt="">
+                            <h2>0%</h2>
+                        </div>
+                        <div class="f_right">
+                            <h1>Illustrator</h1>
+                            <div class="gauge">
+                                <div class="gauge_bar"></div>
+                                <div class="gauge_mask">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec sec5">
+                <div class="contents_area">
+                    <h1>CONTACT</h1>
+                    <ul class="bigbtn_box">
+                        <li class="box">
+                            <div class="square">
+                                <div class="side side_b">
+                                    <p>
+                                        메일
+                                        <br>
+                                        <a target="_blank" href="mailto:dusuna@naver.com">
+                                            dusuna@naver.com
+                                        </a>
+                                        <br>
+                                        <a target="_blank" href="mailto:dusunax@gmail.com">
+                                            dusunax@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="side side_a email">
+                                    <img src="img/icon/mail.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="info">
+                                dusuna@naver.com
+                                <br>
+                                dusunax@gmail.com
+                            </div>
+                        </li>
+                        <li class="box">
+                            <div class="square">
+                                <div class="side side_b">
+                                    <p>
+                                        <a target="_blank" href="https://open.kakao.com/o/ssMnhIKd" class="bigbtn_link btn_kakao">
+                                            카카오톡 오픈채팅
+                                            <br>
+                                            <b>click</b>
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="side side_a kakao">
+                                    <img src="img/icon/kakao.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="info">
+                                KaKaoTalk
+                                <br>
+                                @dusuna
+                            </div>
+                        </li>
+                        <li class="box">
+                            <div class="square">
+                                <div class="side side_b mobile">
+                                    <p>
+                                        <b>010 8003 1903</b>
+                                        <br>
+                                        +82 10 8003 1903
+                                    </p>
+                                </div>
+                                <div class="side side_a mobile">
+                                    <img src="img/icon/mobile.png" alt="">
+                                </div>
+                            </div>
+                            <div class="info">
+                                Mobile<br>
+                                +82 10 8003 1903<br>
+                            </div>
+                        </li>
+                        <!-- <li class="li_text">
+                            <span>
+                                읽어주셔서 감사합니다.
+                            </span>
+                            <div>
+                                <span class="btn_yn yes">네</span>
+                                <span class="btn_yn no">아니오</span>
+                            </div>
+                            <span class="emoji emoji_face">
+                                🙂
+                            </span>
+                            <span class="emoji emoji_good">
+                                😃
+                            </span>
+                            <span class="emoji emoji_not">
+                                😢
+                            </span>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
