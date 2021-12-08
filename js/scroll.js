@@ -15,9 +15,6 @@ $(document).ready(function(){
     for(let i=0; i<$(".sec").length; i++){
         sec_o_top[i]=$(".sec").eq(i).offset().top
         sec_o_bot[i]=sec_o_top[i]+$(".sec").eq(i).height()
-        // $(`<div class="indi"> <= backtick~~
-        //     <div class="indi_text">${indi_text[i].toUpperCase()}⇀</div>
-        // <div>`).appendTo(".indicator_box")
         $('<div class="indi"><div class="indi_text">'+indi_text[i].toUpperCase()+'⇀</div><div>').appendTo(".indicator_box")
         $(".sec").eq(i).attr('id', menu_array[i])
     }
@@ -25,17 +22,10 @@ $(document).ready(function(){
     $(".indi").eq(0).addClass("active")
 
     // 메뉴, indi 클릭시 => time 0
-    $(".menu_ul li").click(function(){
-        $(".menu_ul li").removeClass("active")
-        $(this).addClass("active")
-        $("html, body").animate({
-            scrollTop: sec_o_top[$(this).index()]
-        }, 0)
-        currentSection=$(this).index()
-    })
-    $(".indi").click(function(){
-        $(".indi").removeClass("active")
-        $(this).addClass("active")
+    $(".indi, .menu_ul li").click(function(){
+        index_active($(".indi"), $(this).index(), "active")
+        index_active($(".menu_ul li"), $(this).index(), "active")
+        index_active($(".sec"), $(this).index(), "on")
         $("html, body").animate({
             scrollTop: sec_o_top[$(this).index()]
         }, 0)
@@ -127,7 +117,6 @@ $(document).ready(function(){
             }
         }
         else{
-            // console.log(s_top, header_o_top)
             if(h_fix_chk){
                 $("nav").removeClass("fixed").css({
                     top: "-100px",
@@ -149,26 +138,5 @@ $(document).ready(function(){
                 break;
             }
         }
-        // 액티브 
-        $(".menu_ul li").removeClass("active")
-        $(".menu_ul li").eq(currentSection).addClass("active")
-        $(".indi").removeClass("active")
-        $(".indi").eq(currentSection).addClass("active")
     });
-    // if(s_top>=1000){
-    //     if(!h_fix_chk){
-    //         $("nav").addClass("fixed").animate({
-    //             bottom: "-100px"
-    //         }, 200)
-    //         setTimeout(()=>{
-    //             $("nav").css({
-    //                 bottom: "auto",
-    //                 top: "-100px"
-    //             }).animate({
-    //                 top: "0"
-    //             }, 200)
-    //         }, 200)
-    //         h_fix_chk=true;
-    //     }
-    // }
 });

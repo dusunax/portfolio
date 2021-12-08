@@ -1,6 +1,9 @@
 body {
-    font-family: "Noto Sans KR";
-    overflow-x: hidden;
+    font-family: var(--main-font);
+}
+:root {
+    --main-font: "Noto Sans KR";
+    --active-color: salmon;
 }
 /* 헤더 ----------------------------------------------------*/
 header {
@@ -55,18 +58,18 @@ nav.fixed {
 .menu_ul li.active {
     line-height: 35px;
 
-    color: salmon;
+    color: var(--active-color);
     margin-top: 2px;
 }
 .menu_ul li:hover {
-    color: salmon;
+    color: var(--active-color);
 }
 .menu_ul li:hover::before {
     content: '';
     display: block;
     width: calc(100% - 40px);
     height: 2px;
-    background: salmon;
+    background: var(--active-color);
 
     position: absolute;
     opacity: 1;
@@ -721,6 +724,11 @@ h1 {
     border-radius: 50%;
     cursor: default;
 }
+
+.modal {
+    display: none;
+    pointer-events: none;
+}
 /* 반응형시작 */
 .d-1600-block {
     display: none;
@@ -759,5 +767,32 @@ h1 {
     }
     .sec4 h1 {
         font-size: 30px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .modal {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+    
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+    }
+    .modal .txt {
+        padding: 100px 30px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 20px;
+        color: cyan;
+    
+        font-size: 2em;
+    
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }

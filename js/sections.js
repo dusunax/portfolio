@@ -84,7 +84,7 @@ $(document).ready(function(){
     let start_pos=0;
     let interval_chk=false;
     function sec4_interval(){
-        let skill_interval=setInterval(()=>{
+        let skill_interval=setInterval(function(){
             interval_chk=true
             for(let i=0; i<skill_level.length; i++){
                 if(tmpsave_pos_x[i] < skill_level[i]){
@@ -101,10 +101,8 @@ $(document).ready(function(){
                 interval_chk=false
                 clearInterval(skill_interval)
             }
-            console.log("1")
         }, 10)
     }
-    
     if($("#skills").offset().top==$(window).scrollTop()){
         sec4_interval();
     }
@@ -117,13 +115,4 @@ $(document).ready(function(){
         tmpsave_pos_x=[0, 0, 0, 0, 0, 0, 0, 0]
         start_pos=0;
     })
-    // 섹션5: 버튼 click // 보류
-    // $(".btn_yn.yes").click(()=>{
-    //     $(".emoji").css({display: "none", top: "-10px"})
-    //     $(".emoji_good").css({display: "block"}).animate({top: 0}, 500)
-    // })
-    // $(".btn_yn.no").click(()=>{
-    //     $(".emoji").css({display: "none", top: "-10px"})
-    //     $(".emoji_not").css({display: "block"}).animate({top: 0}, 500)
-    // })
 })
