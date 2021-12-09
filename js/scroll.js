@@ -38,25 +38,25 @@ $(document).ready(function(){
     $(".sec").on("mousewheel DOMMouseScroll", function(){
         event.preventDefault();
         wheel=event.wheelDelta
+        let realIndex;
         if(_chk_scroll){
             _chk_scroll=false;
             setTimeout(()=>{_chk_scroll=true;}, timer);
+
             if(wheel<0 && $(this).next().length!=0){
-                tmpOtop=$(this).next().offset().top
-                $("html, body").animate({
-                    scrollTop: tmpOtop
-                }, timer);
-                $(".sec").removeClass("on")
-                $(this).next().addClass("on")
+                realIndex=$(this).next().index()
             }
             else if(wheel>0 && $(this).prev().length!=0){
-                tmpOtop=$(this).prev().offset().top
-                $("html, body").animate({
-                    scrollTop: tmpOtop
-                }, timer);
-                $(".sec").removeClass("on")
-                $(this).prev().addClass("on")
+                realIndex=$(this).prev().index()
             }
+            tmpOtop=$(".sec").eq(realIndex).offset().top
+            $("html, body").animate({
+                scrollTop: tmpOtop
+            }, timer);
+
+            index_active($(".sec"), realIndex, "on")
+            index_active($(".indi"), realIndex, "active")
+            index_active($(".menu_ul li"), realIndex, "active")
         }
     })
     $(document).keydown(function(){

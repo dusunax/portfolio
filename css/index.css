@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 body {
     font-family: var(--main-font);
+    color: #222;
 }
 :root {
-    --main-font: "Noto Sans KR";
+    --main-font: "Noto Sans KR", sans-serif;
+    --title-font: 'Black Han Sans', sans-serif;
     --active-color: salmon;
+}
+.show_at_lg {
+    display: none;
+}
+.hide_at_lg {
+    display: block;
+}
+h1 {
+    font-size: 45px;
+    font-family: var(--title-font);
+    font-weight: 200;
 }
 /* 헤더 ----------------------------------------------------*/
 header {
@@ -100,7 +116,8 @@ nav.fixed {
     width: 90%;
 }
 .indicator_box {
-    width: 180px;
+    width: 17%;
+    max-width: 250px;
     color: #fff;
 
     position: fixed;
@@ -138,6 +155,7 @@ nav.fixed {
 .indi.active .indi_text {
     opacity: 1;
 }
+/* 섹션시작 */
 .sec {
     width: 100%;
     height: 100vh;
@@ -151,7 +169,6 @@ nav.fixed {
 }
 .sec2 {
     background: #03F7EB;
-    background: linear-gradient(to right, #04dfd4 150px, #03F7EB 151px)
 }
 .sec3 {
     background: #00B295
@@ -162,18 +179,24 @@ nav.fixed {
 .sec5 {
     background: #C9DAEA
 }
+.left {
+    width: 20%;
+    max-width: 280px;
+    height: 100vh;
+    padding-left: 30px;
+    
+    float: left;
+    position: relative;
+    z-index: 99;
+}
 /* 섹션1 --------------------------------------------------*/
 .sec1 {
     overflow: hidden;
 }
-.sec1 .right {
-    width: 20%;
-    min-width: 280px;
-    height: 100vh;
-    padding-left: 30px;
+.sec1 .left {
     background: #00B295;
 }
-.sec1 .right .readme {
+.sec1 .left .readme {
     font-size: 14px;
     color: #fff;
     padding-top: 20px;
@@ -252,6 +275,9 @@ nav.fixed {
     }
 }
 /* 섹션2 소개-----------------------------------------------------*/
+.sec2 .left {
+    background: rgba(207, 163, 163, 0.2);
+}
 .sec2 .top {
     height: 255px;
     background:#aaa;
@@ -291,7 +317,7 @@ nav.fixed {
 }
 .sec2 .bottom {
     position: relative;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .sec2 .card {
     width: 240px;
@@ -300,13 +326,16 @@ nav.fixed {
     background: #fff;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
 
-    font-size: 26px;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 24px;
     text-align: center;
     cursor: pointer;
 
     position: absolute;
     right: 10px;
     transition: all .3s;
+    z-index: 999;
 
     user-select: none;
     -moz-user-select: none;
@@ -320,6 +349,29 @@ nav.fixed {
     top: 50px;
     right: 220px;
     transform: rotate(10deg);
+    animation: pick_this 1s alternate infinite;
+}
+.sec2 .card .info {
+    font-size: 14px;
+    position: absolute;
+    top: -30px;
+    transform: rotate(-10deg);
+
+    animation: blink .5s infinite alternate;
+    opacity: 0;
+    transition: all .3s;
+}
+.sec2 .card:hover .info {
+    top: -35px;
+}
+@keyframes blink {
+    0% {opacity: 1;}
+    100% {opacity: .5;}
+}
+/* card2에 적용 */
+@keyframes pick_this {
+    0% {transform: translateX(0px) rotate(10deg);}
+    100% {transform: translateX(-20px) rotate(10deg);}
 }
 .sec2 .card3 {
     top: 90px;
@@ -343,7 +395,11 @@ nav.fixed {
     box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
 }
 .sec2 .text_box {
-    text-align: center;
+    text-align: left;
+}
+.sec2 .text_box h3 {
+    margin-top: 25px;
+    margin-bottom: 5px;
 }
 .sec2 .img_card {
     top: 430px;
@@ -389,21 +445,21 @@ nav.fixed {
     height: 100vh;
     padding-top: 80px;
     box-sizing: border-box;
-}
-.sec3 > .left {
-    width: 200px;
-    padding-left: 30px;
-    padding-top: 200px;
-    box-sizing: border-box;
 
-    float: left;
-    position: relative;
+    display: flex;
+}
+.sec3 .left,
+.sec3 .right {
+    float: none;
+}
+.sec3 .left {
+    flex: 1 1 25%;
 }
 .sec3 .mockup {
-    width: calc(100vw - 300px);
+    width: 100%;
     height: 100%;
     border-radius: 50px 0 0 0;
-    padding: 10px 30px 10px 60px;
+    padding: 20px 30px;
     box-sizing: border-box;
 
     float: right;
@@ -411,11 +467,9 @@ nav.fixed {
     z-index: 9;
     background: #fff;
 }
-h1 {
-    font-size: 45px;
-}
 .sec3 .content {
-    width: calc((100% - (20px * 3))/ 3);
+    width: calc((100% - (20px * 2))/ 3);
+    height: calc(100vh - (300px));
     border-radius: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -426,6 +480,9 @@ h1 {
     float: left;
     position: relative;
     transition: all .5s;
+}
+.sec3 .content:last-child {
+    margin-right: 0px;
 }
 .sec3 .content:hover {
     top: -5px;
@@ -516,6 +573,14 @@ h1 {
 }
 .f_left{
     float: left;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 .f_right{
     float: right;
@@ -539,7 +604,7 @@ h1 {
     width: 100%;
     height: 100%;
     padding-top: 100px;
-    padding-left: 300px;
+    padding-left: 25%;
     box-sizing: border-box;
     position: relative;
     
@@ -554,7 +619,8 @@ h1 {
 }
 .sec4 .f_right {
     width: calc(100% - 140px);
-    margin-right: 20px;
+    height: 100%;
+    margin-right: 25px;
 }
 .sec4 .skill {
     width: 400px;
@@ -571,8 +637,8 @@ h1 {
 .sec4 img {
     width: 100%;
 }
-.sec4 h1 {
-    font-size: 50px;
+.sec4 .skill h1 {
+    font-size: 40px;
     line-height: 100px;
     margin: 0;
 }
@@ -639,8 +705,6 @@ h1 {
 
     margin: 0 60px;
     perspective: 800px;
-    
-    cursor: pointer;
 }
 .box .square {
     width: 100%;
@@ -653,6 +717,8 @@ h1 {
     -moz-perspective: 600;
     -ms-perspective: 600;
     -o-perspective: 600;
+    
+    cursor: pointer;
 }
 .side {
     width: 100%;
@@ -717,8 +783,16 @@ h1 {
 
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateZ(40px);
     z-index: 100px;
+    animation: holo 5s infinite;
+}
+@keyframes holo {
+    0%, 100% { color: #bd59bd;}
+    20% { color: #0eb6b6;}
+    40% { color: #72a724;}
+    60% { color: #acac1f;}
+    80% { color: #5243a1;}
 }
 .side.mobile {
     border-radius: 50%;
@@ -735,14 +809,13 @@ h1 {
 }
 @media screen and (max-width: 1600px) {
     .sec3 .mockup {
-        padding: 10px 20px 10px 50px;
+        padding: 20px 24px;
     }
     .sec3 .content {
         margin-right: 10px;
-        width: calc((100% - (10px * 3))/ 3);
+        width: calc((100% - (10px * 2))/ 3);
     }
     .sec3 .text_head {
-        min-height: 110px;
         font-size: 15px;
     }
     .sec3 .text_sm {
@@ -754,22 +827,144 @@ h1 {
         font-size: 14px;
         margin: 3px 0;
     }
-    /* .d-1600-block {
-        display: block;
-    } */
-    .sec4 h1 {
-        font-size: 40px;
+    .sec4 .skill h1 {
+        font-size: 35px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .sec4 .skill {
+        width: calc((100% - (20px * 3)) / 3);
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .sec4 .skill h1 {
+        font-size: 30px;
     }
 }
 @media screen and (max-width: 1300px) {
     .sec3 .text_sm {
         margin-bottom: 150%;
     }
-    .sec4 h1 {
-        font-size: 30px;
+    .show_at_lg {
+        display: block;
+    }
+    .hide_at_lg {
+        display: none;
+    }
+    .indicator_box {
+        top: 190px;
+    }
+    .indi {
+        height: 8px;
+        margin: 20px 0;
+    }
+    .indi_text {
+        font-size: 12px;
+    }
+    .text_head {
+        text-align: center;
+    }
+    .tag {
+        margin-top: 5px;
     }
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1200px) {
+    .sec4 h2 {
+        line-height: 120px;
+    }
+    .sec4 .skill {
+        position: relative;
+    }
+    .sec4 .skill .f_left {
+        width: 100%;
+        height: 60%;
+
+        -webkit-box-orient: horizontal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    .sec4 .skill .f_left img{
+        max-width: 120px;
+    }
+    .sec4 .f_right {
+        width: 100%;
+        height: 40%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    .sec4 .skill h1 {
+        position: absolute;
+        top: -20px;
+        right: 10px;
+        color: #ccc;
+        z-index: 99;
+    }
+    .sec4 .gauge {
+        height: 40px;
+    }
+    .sec3 .content {
+        height: calc(100vh - (200px));
+    }
+    .sec3 .content img {
+        border-radius: 5px;
+    }
+}
+@media screen and (max-width: 860px) {
+    nav,
+    .menu_ul li {
+        padding: 0 12px;
+    }
+    .logo {
+        font-size: 2.5em;
+    }
+    .sec4 .skill .f_left {
+        flex: none;
+    }
+    .sec4 .skill .f_left img {
+        max-width: none;
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+    }
+    .sec4 .f_right {
+        height: 20%;
+        position: absolute;
+        bottom: 0;
+        z-index: 99;
+        background: #fff;
+    }
+    .sec4 h2 {
+        line-height: 50px;
+        text-align: left;
+        padding-left: 20px;
+        position: absolute;
+        color: #eee;
+        bottom: -30px;
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
+    }
+    .sec4 .gauge {
+        height: 30px;
+        top: 5px;
+    }
+    .sec4 .skill h1 {
+        top: -180px;
+        color: #fff;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+@media screen and (max-width: 720px) {
+    nav,
+    .menu_ul li {
+        padding: 0 10px;
+    }
+    .logo {
+        font-size: 2em;
+    }
+}
+
+/* 윈도우최적화 alert */
+@media screen and (max-width: 650px) {
     .modal {
         display: block;
         width: 100vw;

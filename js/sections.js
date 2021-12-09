@@ -2,8 +2,9 @@ $(document).ready(function(){
     //섹션1: 포트폴리오 타이틀
     //섹션1 글자init
     let _reverse=false
-    let timer=200
+    let timer=100
     let text_count=0;
+    let text_length=$(".text_ball").length
     let text_color=["#C9DAEA", "#03F7EB", "#00B295", "#AB2346", "#c74163"]
     let text_interval=setInterval(function(){
         let rand1=Math.floor(Math.random()*100);
@@ -17,7 +18,7 @@ $(document).ready(function(){
             })
             text_count+=1
         }
-        if(text_count==9){
+        if(text_count==text_length){
             clearInterval(text_interval)
         }
     }, timer)
@@ -26,10 +27,11 @@ $(document).ready(function(){
     })
     setTimeout(()=>{
         $(".text_box").trigger("click")
-    }, 4000)
+    }, (timer*8) + 500)
     
     // 섹션2: profile
     let chk_drag=false;
+    let chk_pick=false;
     let tmp_posX;
     let tmp_posY;
     $(".card").on({
@@ -38,6 +40,16 @@ $(document).ready(function(){
             tmp_posX=event.offsetX
             tmp_posY=event.offsetY
             $(this).addClass("pick")
+            
+            chk_pick=true;
+            if(chk_pick){
+                $(".card").css({
+                    animation: "none"
+                })
+                $(".card .info").css({
+                    display: "none"
+                })
+            }
         },
         mouseup:function(){
             chk_drag=false;
@@ -55,9 +67,6 @@ $(document).ready(function(){
                 top: event.clientY -400,
                 left: event.clientX -100,
             })
-        }
-        else {
-
         }
     })
     // 섹션3: 포트폴리오
@@ -79,7 +88,7 @@ $(document).ready(function(){
     })
     // 섹션4: 스킬
     // [HTML, CSS, JS, JQ, PHP, React, PS, ILLUST]
-    let skill_level=["95", "95", "90", "90", "70", "40", "95", "85"]
+    let skill_level=["95", "95", "90", "90", "70", "35", "95", "85"]
     let tmpsave_pos_x=[0, 0, 0, 0, 0, 0, 0, 0]
     let start_pos=0;
     let interval_chk=false;
