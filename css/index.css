@@ -4,6 +4,7 @@
 body {
     font-family: var(--main-font);
     color: #222;
+    overflow-x: hidden;
 }
 :root {
     --main-font: "Noto Sans KR", sans-serif;
