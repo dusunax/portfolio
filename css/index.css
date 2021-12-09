@@ -602,12 +602,13 @@ nav.fixed {
 /* 섹션4: 스킬 -----------------------------------------------------*/
 .sec4 .contents_area {
     width: 100%;
+    max-width: none;
     height: 100%;
     padding-top: 100px;
-    padding-left: 25%;
+    padding-left: 21%;
     box-sizing: border-box;
     position: relative;
-    
+    right: 30px;
 }
 .sec4 .f_left{
     width: 100px;
@@ -641,6 +642,7 @@ nav.fixed {
     font-size: 40px;
     line-height: 100px;
     margin: 0;
+    transform: translateY(2px);
 }
 .sec4 h2 {
     width: 100%;
@@ -829,6 +831,9 @@ nav.fixed {
     }
     .sec4 .skill h1 {
         font-size: 35px;
+    }
+    .sec4 .contents_area {
+        right: 0;
     }
 }
 @media screen and (max-width: 1400px) {
