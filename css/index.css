@@ -559,6 +559,9 @@ nav.fixed {
 .tag.php {
     background: #2a36e0;
 }
+.tag.mysql {
+    background: #f1d220;
+}
 .sec3 .content .title {
     text-align: center;
 

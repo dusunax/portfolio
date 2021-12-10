@@ -87,9 +87,16 @@ $(document).ready(function(){
         window.open(locateTo)
     })
     // 섹션4: 스킬
-    // [HTML, CSS, JS, JQ, PHP, React, PS, ILLUST]
-    let skill_level=["95", "95", "90", "90", "70", "35", "95", "85"]
-    let tmpsave_pos_x=[0, 0, 0, 0, 0, 0, 0, 0]
+    // [HTML, CSS, JS, JQ, MySQL, PHP, React, PS, ILLUST]
+    let skill_level=["95", "95", "90", "90", "80", "50", "35", "95", "85"]
+    let tmpsave_pos_x=new Array;
+    tmpsave_init();
+    function tmpsave_init(){
+        tmpsave_pos_x=new Array;
+        for(let i=0; i<skill_level.length; i++){
+            tmpsave_pos_x.push("0")
+        }
+    }
     let start_pos=0;
     let interval_chk=false;
     function sec4_interval(){
@@ -121,7 +128,7 @@ $(document).ready(function(){
                 sec4_interval();
             }
         }
-        tmpsave_pos_x=[0, 0, 0, 0, 0, 0, 0, 0]
+        tmpsave_init();
         start_pos=0;
     })
 })
