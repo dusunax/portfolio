@@ -81,8 +81,8 @@ $(document).ready(function(){
         }
         index+=1;
     }, 1000)
-    $(".sec3 .img_box").click(function(){
-        let locateTo=$(this).parent(".content").find("a").attr("href")
+    $(".sec3 .img_box, .sec3 .title").click(function(){
+        let locateTo=$(this).parents(".content").find("a").attr("href")
         // location.href=locateTo
         window.open(locateTo)
     })

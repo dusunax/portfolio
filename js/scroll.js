@@ -20,7 +20,6 @@ $(document).ready(function(){
     }
     $(".menu_ul li").eq(0).addClass("active")
     $(".indi").eq(0).addClass("active")
-
     // 메뉴, indi 클릭시 => time 0
     $(".indi, .menu_ul li").click(function(){
         index_active($(".indi"), $(this).index(), "active")
@@ -42,7 +41,6 @@ $(document).ready(function(){
         if(_chk_scroll){
             _chk_scroll=false;
             setTimeout(()=>{_chk_scroll=true;}, timer);
-
             if(wheel<0 && $(this).next().length!=0){
                 realIndex=$(this).next().index()
             }
@@ -57,6 +55,20 @@ $(document).ready(function(){
             index_active($(".sec"), realIndex, "on")
             index_active($(".indi"), realIndex, "active")
             index_active($(".menu_ul li"), realIndex, "active")
+            if(realIndex==2){
+                setTimeout(function(){
+                    document.querySelector(".sec3").classList.add("active")
+                    document.querySelector(".sec3.active  .left").addEventListener("mouseenter", function(){
+                        document.querySelector(".sec3").classList.remove("active")
+                    })
+                    document.querySelector(".sec3.active  .left").addEventListener("mouseleave", function(){
+                        document.querySelector(".sec3").classList.add("active")
+                    })
+                }, 500)
+            }
+            else {
+                document.querySelector(".sec3").classList.remove("active")
+            }
         }
     })
     $(document).keydown(function(){

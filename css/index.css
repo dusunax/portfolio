@@ -38,7 +38,7 @@ nav {
 
     position: fixed;
     bottom: -100px;
-    z-index: 99999;
+    z-index: 9999999;
     overflow: hidden;
 }
 nav .contents_area {
@@ -456,24 +456,44 @@ nav.fixed {
 .sec3 .left {
     flex: 1 1 25%;
 }
+.sec3 h1 {
+    max-height: 42px;
+    flex: 1 1 100%;
+}
 .sec3 .mockup {
-    width: 100%;
-    height: 100%;
-    border-radius: 50px 0 0 0;
+    width: 80%;
+    height: 90%;
+    border-radius: 50px 0 0 50px;
     padding: 20px 30px;
     box-sizing: border-box;
 
-    float: right;
-    position: relative;
-    z-index: 9;
+    position: absolute;
+    right: 0;
     background: #fff;
+    z-index: 99999;
+
+    transition: all 0.5s;
+}
+.sec3.active .mockup{
+    width: calc(100% - 30px);
+}
+.sec3.active .left {
+    flex: 0 0 70px;
+}
+.sec3 .content_ul {
+    height: calc(100% - 50px);
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 .sec3 .content {
-    width: calc((100% - (20px * 2))/ 3);
-    height: calc(100vh - (300px));
+    max-width: 20%;
+    flex: 0 0 18%;
+    height: 520px;
+    overflow: hidden;
     border-radius: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 15px;
     box-sizing: border-box;
     background: #fff;
@@ -482,10 +502,8 @@ nav.fixed {
     position: relative;
     transition: all .5s;
 }
-.sec3 .content:last-child {
-    margin-right: 0px;
-}
 .sec3 .content:hover {
+    height: 100%;
     top: -5px;
     box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.4);
 }
@@ -522,15 +540,6 @@ nav.fixed {
     height: 0;
     margin-bottom: 52%;
 }
-.favi {
-    width: 30px;
-    height: 30px;
-    background: url(../img/favicon/favi001.ico);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-}
 .text_sm {
     font-size: 14px;
     word-wrap: break-word;
@@ -543,6 +552,37 @@ nav.fixed {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     box-shadow: 2px 2px 1px 0 #ddd;
     border-radius: 5px;
+}
+.link_container {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+}
+.link_container span {
+    font-size: 10px;
+    position: absolute;
+    right: 30px;
+    bottom: 12px;
+    transition: all .2s;
+}
+.content:hover .link_container span {
+    transform: rotate(180deg);
+}
+.link_btn{
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background: #000;
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 4px;
+}
+.link_btn:hover {
+    opacity: 0.8;
 }
 .tag.html {
     background: #ff7b00;
@@ -588,20 +628,6 @@ nav.fixed {
 }
 .f_right{
     float: right;
-}
-.link_btn{
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 15px;
-    background: #000;
-    color: #fff;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    
-}
-.link_btn:hover {
-    opacity: 0.8;
 }
 /* 섹션4: 스킬 -----------------------------------------------------*/
 .sec4 .contents_area {
@@ -817,17 +843,16 @@ nav.fixed {
     .sec3 .mockup {
         padding: 20px 24px;
     }
-    .sec3 .content {
-        margin-right: 10px;
-        width: calc((100% - (10px * 2))/ 3);
-    }
     .sec3 .text_head {
-        font-size: 15px;
+        font-size: 14px;
     }
     .sec3 .text_sm {
         height: 0;
         margin-bottom: 80%;
-        font-size: 13px;
+        font-size: 12px;
+    }
+    .sec3 .content .title {
+        margin-bottom: 3px;
     }
     .tag {
         font-size: 14px;
@@ -911,9 +936,6 @@ nav.fixed {
     }
     .sec4 .gauge {
         height: 40px;
-    }
-    .sec3 .content {
-        height: calc(100vh - (200px));
     }
     .sec3 .content img {
         border-radius: 5px;
