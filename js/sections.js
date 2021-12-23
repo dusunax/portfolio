@@ -30,19 +30,17 @@ $(document).ready(function(){
     }, (timer*8) + 500)
     
     // 섹션2: profile
-    let chk_drag=false;
-    let chk_pick=false;
-    let tmp_posX;
-    let tmp_posY;
+    let sec2_chk_drag=false;
+    let sec2_chk_pick=false;
     $(".card").on({
         mousedown:function(){
-            chk_drag=true;
+            sec2_chk_drag=true;
             tmp_posX=event.offsetX
             tmp_posY=event.offsetY
             $(this).addClass("pick")
             
-            chk_pick=true;
-            if(chk_pick){
+            sec2_chk_pick=true;
+            if(sec2_chk_pick){
                 $(".card").css({
                     animation: "none"
                 })
@@ -52,18 +50,13 @@ $(document).ready(function(){
             }
         },
         mouseup:function(){
-            chk_drag=false;
+            sec2_chk_drag=false;
             $(this).removeClass("pick")
         }
     })
     $(window).mousemove(function(){
-        if(chk_drag){
+        if(sec2_chk_drag){
             $(".card.pick").css({
-                // top: event.clientY - tmp_posY,
-                // left: event.clientX - tmp_posX
-                // top: event.clientY - (popup.outerHeight()/2),
-                // left: event.clientX - (popup.outerWidth()/2),
-
                 top: event.clientY -400,
                 left: event.clientX -100,
             })
@@ -86,6 +79,16 @@ $(document).ready(function(){
         // location.href=locateTo
         window.open(locateTo)
     })
+    hover_sec3_left(document.querySelector(".sec3 .left"));
+    hover_sec3_left(document.querySelector(".indicator_box"));
+    function hover_sec3_left(el){
+        el.addEventListener("mouseenter", function(){
+            document.querySelector(".sec3").classList.remove("active")
+        })
+        el.addEventListener("mouseleave", function(){
+            document.querySelector(".sec3").classList.add("active")
+        })
+    }
     // 섹션4: 스킬
     // [HTML, CSS, JS, JQ, MySQL, PHP, React, PS, ILLUST]
     let skill_level=["95", "95", "90", "90", "80", "50", "35", "95", "85"]

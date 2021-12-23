@@ -25,6 +25,7 @@ $(document).ready(function(){
         index_active($(".indi"), $(this).index(), "active")
         index_active($(".menu_ul li"), $(this).index(), "active")
         index_active($(".sec"), $(this).index(), "on")
+        is_realindex_is_2($(this).index());
         $("html, body").animate({
             scrollTop: sec_o_top[$(this).index()]
         }, 0)
@@ -34,6 +35,7 @@ $(document).ready(function(){
     let wheel;
     let _chk_scroll=true;
     let tmpOtop;
+    let sec3=document.querySelector(".sec3")
     $(".sec").on("mousewheel DOMMouseScroll", function(){
         event.preventDefault();
         wheel=event.wheelDelta
@@ -52,25 +54,25 @@ $(document).ready(function(){
                 scrollTop: tmpOtop
             }, timer);
 
-            index_active($(".sec"), realIndex, "on")
-            index_active($(".indi"), realIndex, "active")
-            index_active($(".menu_ul li"), realIndex, "active")
-            if(realIndex==2){
-                setTimeout(function(){
-                    document.querySelector(".sec3").classList.add("active")
-                    document.querySelector(".sec3.active  .left").addEventListener("mouseenter", function(){
-                        document.querySelector(".sec3").classList.remove("active")
-                    })
-                    document.querySelector(".sec3.active  .left").addEventListener("mouseleave", function(){
-                        document.querySelector(".sec3").classList.add("active")
-                    })
-                }, 500)
-            }
-            else {
-                document.querySelector(".sec3").classList.remove("active")
-            }
+            index_active($(".sec"), realIndex, "on");
+            index_active($(".indi"), realIndex, "active");
+            index_active($(".menu_ul li"), realIndex, "active");
+            is_realindex_is_2(realIndex);
         }
     })
+    function is_realindex_is_2(index){
+        if(index==2 && !sec3.classList.contains("active")){
+            setTimeout(function(){
+                toggle_active_on_sec3()
+            }, 300)
+        }
+        else if((index!==2 && sec3.classList.contains("active"))){
+            toggle_active_on_sec3()
+        }
+    }
+    function toggle_active_on_sec3(){
+        document.querySelector(".sec3").classList.toggle("active");
+    }
     $(document).keydown(function(){
         for(let i=0; i<hotkey.length; i++){
             if(event.keyCode==hotkey[i]){
@@ -89,6 +91,8 @@ $(document).ready(function(){
                 }, 0);
                 $(".sec").removeClass("on")
                 $(".sec").eq(tmp_index).next().addClass("on")
+                is_realindex_is_2(tmp_index);
+        
             }
             else if(event.keyCode=="38" && $(".sec.on").prev().length!=0){
                 tmpOtop=$(".sec.on").prev().offset().top;
@@ -98,6 +102,7 @@ $(document).ready(function(){
                 }, 0);
                 $(".sec").removeClass("on")
                 $(".sec").eq(tmp_index).prev().addClass("on")
+                is_realindex_is_2(tmp_index);
             }
             $("html, body").animate({
                 scrollTop: tmpOtop

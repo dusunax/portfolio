@@ -209,6 +209,7 @@ nav.fixed {
     position: absolute;
     bottom: 200px;
     margin-bottom: 20px;
+    z-index: 99;
 
     cursor: pointer;
     transition: transform .3s;
