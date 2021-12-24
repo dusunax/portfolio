@@ -598,13 +598,16 @@ nav.fixed {
 
     transition: all .2s;
     transform-origin: bottom;
+
+    opacity: 0.1;
+    height: 120px;
 }
 .qr_box img{
     width: 100%;
 }
 .link_container:hover .qr_box {
-    height: 120px;
     z-index: 9;
+    opacity: 1;
 }
 .tag.html {
     background: #ff7b00;
