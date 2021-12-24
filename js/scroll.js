@@ -64,10 +64,12 @@ $(document).ready(function(){
         if(index==2 && !sec3.classList.contains("active")){
             setTimeout(function(){
                 toggle_active_on_sec3()
-            }, 300)
+            }, 400)
         }
         else if((index!==2 && sec3.classList.contains("active"))){
-            toggle_active_on_sec3()
+            setTimeout(function(){
+                toggle_active_on_sec3()
+            }, 400)
         }
     }
     function toggle_active_on_sec3(){
